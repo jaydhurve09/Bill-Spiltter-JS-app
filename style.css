@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", serif;
+}
+
+.container{
+    width: 53%;
+    height: 60vh;
+    display: flex;
+    justify-content: space-between;
+    margin: 4rem auto;
+}
+
+.calculate{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+a{
+    background: red;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 9%;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: 2;
+}
