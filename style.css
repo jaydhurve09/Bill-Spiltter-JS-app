@@ -1,36 +1,216 @@
-*{
+/* 🌍 Global Styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: "Poppins", serif;
-}
-
-.container{
-    width: 53%;
-    height: 60vh;
-    display: flex;
-    justify-content: space-between;
-    margin: 4rem auto;
-}
-
-.calculate{
+body {
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
 }
 
-a{
-    background: red;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 9%;
+/* 🏷️ Headings */
+h1 {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 1.8rem;
 }
 
-.buttons{
+/* 🔢 Input Styles */
+input {
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0.6rem;
+    width: 100%;
+    border-radius: 7px;
+    background-color: white;
+}
+
+/* Hide Number Input Spinner */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+/* 📦 Main Container */
+.container {
+    width: 53%;
+    height: 65vh;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem auto;
+    gap: 1.5rem;
+}
+
+/* 🏗️ Left Column: Calculation Section */
+.calculate {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    gap: 1rem; /* ✅ Added spacing */
+}
+
+/* 🔲 Input Container */
+.input-container {
+    border: 2px solid #ddd;
+    padding: 10px 12px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+}
+
+/* 🔢 Additional Input Styling */
+.input-container-extra input {
+    color: white;
+    background-color: gray;
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 7px;
+}
+
+.input-container-extra input::placeholder {
+    color: white;
+}
+
+/* 🎛️ Tip Selection Buttons */
+.buttons {
     display: grid;
-    grid-template-columns: 3;
-    grid-template-rows: 2;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.7rem; /* ✅ Added spacing */
+    margin: 1rem 0;
+}
+
+.buttons a {
+    background: red; /* ✅ Ensured red background */
+    padding: 0.8rem;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* ✅ Removed underline */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s ease-in-out;
+}
+
+.buttons a:hover {
+    background: rgb(219, 0, 0);
+}
+
+/* 📊 Right Column: Bill Display Section */
+.display {
+    width: 50%;
+    background-color: red;
+    padding: 2rem;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.display h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* 🔘 Buttons */
+.bill-btn,
+.reset-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.bill-btn {
+    background-color: red;
+    color: white;
+}
+
+.bill-btn:hover {
+    background-color: rgb(219, 0, 0);
+}
+
+.reset-btn {
+    background-color: white;
+    color: black;
+}
+
+.reset-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* 📱 Mobile Responsive Styles */
+@media (max-width: 1024px) {
+    .container {
+        width: 80%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calculate,
+    .display {
+        width: 100%;
+    }
+
+    .display {
+        padding: 1.5rem;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin-bottom: 4rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bill-btn,
+    .reset-btn {
+        font-size: 1rem;
+    }
+}
+
+/* 📱 Extra Small Screens (iPhone SE, Pixel 4a) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .display h3 {
+        font-size: 1.2rem;
+    }
+
+    .bill-btn,
+    .reset-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
 }

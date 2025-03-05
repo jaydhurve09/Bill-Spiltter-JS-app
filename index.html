@@ -10,11 +10,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Bill Splitter</h1>
     <div class="container">
         <div class="calculate">
             <div>
-                <label for="bill">Bill</label>
-                <input type="text" required>
+                <p for="bill">Bill</p>
+                <div class="input-container">
+                    <span>₹</span>
+                    <input type="number" required>
+                </div>
             </div>
     
             <div>
@@ -27,11 +31,17 @@
                     <a class="50percent">50%</a>
                     <a class="75percent">75%</a>
                 </div>
-                <input class="custom-tip" type="number" placeholder="Custom tip">
+                <div class="input-container-extra">
+                    <input class="custom-tip" type="number" placeholder="Enter Custom Tip Amount">
+                </div>
+                
             </div> 
     
             <div>
                 <label>Number of People</label>
+                <div class="input-container-extra">
+                    <input class="custom-tip" type="number" placeholder="Enter Total people">
+                </div>
             </div>
     
             <button class="bill-btn">Generate Bill</button>
